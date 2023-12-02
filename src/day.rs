@@ -4,7 +4,7 @@ use crate::problem::Problem;
 
 pub fn run_task(input: Vec<String>, day: u64, part: u8) -> String {
   let day: Box<dyn Problem> = Box::new(match day {
-    1 => unimplemented!("Day not implemented yet"),
+    1 => day01::Day1,
     2 => unimplemented!("Day not implemented yet"),
     3 => unimplemented!("Day not implemented yet"),
     4 => unimplemented!("Day not implemented yet"),
