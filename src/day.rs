@@ -1,11 +1,12 @@
 mod day01;
+mod day02;
 
 use crate::problem::Problem;
 
 pub fn run_task(input: Vec<String>, day: u64, part: u8) -> String {
-  let day: Box<dyn Problem> = Box::new(match day {
-    1 => day01::Day1,
-    2 => unimplemented!("Day not implemented yet"),
+  let day: Box<dyn Problem> = match day {
+    1 => Box::new(day01::Day1),
+    2 => Box::new(day02::Day2),
     3 => unimplemented!("Day not implemented yet"),
     4 => unimplemented!("Day not implemented yet"),
     5 => unimplemented!("Day not implemented yet"),
@@ -30,7 +31,7 @@ pub fn run_task(input: Vec<String>, day: u64, part: u8) -> String {
     24 => unimplemented!("Day not implemented yet"),
     25 => unimplemented!("Day not implemented yet"),
     _ => panic!("Invalid day chosen: {}", day)
-  });
+  };
 
   match part {
     1 => day.part1(input),
